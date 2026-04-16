@@ -5,6 +5,7 @@ import ViewerPage from "./pages/ViewerPage";
 export default function App() {
   const [page, setPage] = useState("tracker");
   const [sessionId, setSessionId] = useState(null);
+  const [theme, setTheme] = useState("light"); // ✅ FIX ADDED
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -14,6 +15,7 @@ export default function App() {
       setPage("viewer");
     }
   }, []);
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
